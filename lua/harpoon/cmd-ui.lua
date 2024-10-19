@@ -98,14 +98,21 @@ function M.toggle_quick_menu()
     vim.api.nvim_buf_set_keymap(
         Harpoon_cmd_bufh,
         "n",
-        "q",
+        "<A-g>",
         "<Cmd>lua require('harpoon.cmd-ui').toggle_quick_menu()<CR>",
         { silent = true }
     )
     vim.api.nvim_buf_set_keymap(
         Harpoon_cmd_bufh,
         "n",
-        "<ESC>",
+        "<A-g >",
+        "<Cmd>lua require('harpoon.cmd-ui').toggle_quick_menu()<CR>",
+        { silent = true }
+    )
+    vim.api.nvim_buf_set_keymap(
+        Harpoon_cmd_bufh,
+        "n",
+        "<q>",
         "<Cmd>lua require('harpoon.cmd-ui').toggle_quick_menu()<CR>",
         { silent = true }
     )
@@ -113,6 +120,13 @@ function M.toggle_quick_menu()
         Harpoon_cmd_bufh,
         "n",
         "<CR>",
+        "<Cmd>lua require('harpoon.cmd-ui').select_menu_item()<CR>",
+        {}
+    )
+    vim.api.nvim_buf_set_keymap(
+        Harpoon_cmd_bufh,
+        "n",
+        "<A-g>",
         "<Cmd>lua require('harpoon.cmd-ui').select_menu_item()<CR>",
         {}
     )
